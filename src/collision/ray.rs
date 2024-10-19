@@ -18,7 +18,7 @@ impl Raycaster {
 	 * @param condition - A function that takes BlockCoordinates and returns a boolean,
 	 *                    defining the condition to stop traversing when met.
 	 */
-	#[napi(ts_args_type = "start: Vector3f, end: Vector3f, condition: (position: Vector3f) => bool")]
+	#[napi(ts_args_type = "start: Vector3f, end: Vector3f, condition: (position: Vector3f) => boolean")]
 	pub fn transverse_blocks(start: &Vector3f, end: &Vector3f, condition: JsFunction) {
 		if start.equals(end) { // No traversal needed if start and end are the same.
 			return;
